@@ -105,7 +105,7 @@
 
 }
 /*==by SIRMly==*/
-.words{position: relative;}
+.words{position: relative; height: 0.75rem; overflow: hidden;}
 .hidden{position: absolute; width: 1.35rem; right: 0; top: 3.8rem; bottom: 0; background-color: #231916; z-index: 99;}
 .hand{width: 0.7rem; height: 1.03rem; position: absolute; z-index: 999; right: 4%; top: 50%; margin-top: -1rem;
     background: url("../images/jian.png") no-repeat center center;
