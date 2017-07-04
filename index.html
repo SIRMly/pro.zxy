@@ -180,9 +180,9 @@
             },
             onTransitionEnd: function(swiper){
                 swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-                $(".hidden").hide();
                 setTimeout(function(){
                     $(".text1").fadeOut(1000);
+                    $(".hidden").hide();
                 }, 1500);
                 setTimeout(function(){
                     $(".text2").fadeOut(1000);
