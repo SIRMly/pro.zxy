@@ -75,13 +75,13 @@
     }
     .swiper-slide img{
         display:block;
-        width:8.25rem;
+        width:7.5rem;
         height:100%;
         border-radius:0.3rem;
         /*border:1px solid red;*/
         /*width:100%;*/
         margin:0 auto;
-        height:4.4rem;
+        height:4rem;
     }
     .swiper-pagination{
         right:18px;
