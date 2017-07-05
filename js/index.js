@@ -7,12 +7,6 @@
     bgm.src = "audio/audio.mp3";
     document.addEventListener("WeixinJSBridgeReady", function () {
     }, false);
-    setTimeout(function () {
-        bgm.play();
-        WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-            bgm.play();
-        })
-    }, 200);
     var imgs = [
         "images/01.jpg",
         "images/1.gif",
@@ -55,6 +49,12 @@
     }
 
     function page1(){
+        setTimeout(function () {
+            bgm.play();
+            WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                bgm.play();
+            })
+        }, 200);
         $(".page1").removeClass("hide");
         timeStart();
         var wordTime,hiddenTime,arrowTime;
