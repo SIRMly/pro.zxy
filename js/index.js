@@ -3,10 +3,15 @@
 * @Date:   2017-07-05 10:51:00
 */
 ;(function ($){
-    setTimeout(function (){
-        var audio = document.getElementById("audio");
-        audio.play();
-    },0);
+    var bgm = document.getElementById("bgm");
+    document.addEventListener("WeixinJSBridgeReady", function () {
+    }, false);
+    setTimeout(function () {
+        bgm.play();
+        WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+            bgm.play();
+        })
+    }, 200);
     var imgs = [
         "images/01.jpg",
         "images/1.gif",
