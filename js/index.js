@@ -74,6 +74,8 @@
             },
             onTransitionEnd : function (swiper){
                 var slideNow = $(".swiper-slide-active");
+                var slideNum = swiper.activeIndex;
+                slideNow = $(".swiper-slide").eq(slideNum);
                 var text1 = slideNow.find(".text1");
                 var text2 = slideNow.find(".text2");
                 var text3 = slideNow.find(".text3");
