@@ -4,11 +4,14 @@
 */
 ;(function ($){
     var bgm = document.getElementById("bgm");
+    bgm.src = "audio/audio.mp3";
     document.addEventListener("WeixinJSBridgeReady", function () {
     }, false);
     setTimeout(function () {
+        bgm.load();
         bgm.play();
         WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+            bgm.load();
             bgm.play();
         })
     }, 200);
