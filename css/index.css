@@ -47,7 +47,7 @@ body{background:#231916;}
 }
 .progerss-inner{width: 50vh; position: absolute; left: 50%; margin-left: -25vh; top: 80vh;}
 #progress-bar{width: 50vh; height: 2vh;}
-#progress-bar span{display: block; height: 100%; background-color: #f39700; width: 100%}
+#progress-bar span{display: block; height: 100%; background-color: #f39700; width: 0%}
 #progress{font-size: 0.4rem;color: #fff; height: 1rem; line-height: 1rem; text-align: center; width: 100%;}
 .header{
     height: 11vh;

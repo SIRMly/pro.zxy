@@ -38,9 +38,9 @@
                     proPercentage=100;
                     proBox.addClass("hide");
                     page1();
-
                 }
                 $("#progressNum").html(proPercentage+"%");
+                $("#progress-bar span").width(proPercentage+"%");
             }
         }
     }
