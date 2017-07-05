@@ -50,10 +50,10 @@
 
     function page1(){
         setTimeout(function () {
-            bgm.play();
             WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
                 bgm.play();
-            })
+            });
+            bgm.play();
         }, 200);
         $(".page1").removeClass("hide");
         timeStart();
