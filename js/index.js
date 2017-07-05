@@ -21,7 +21,7 @@
         "images/10.gif",
         "images/11.gif",
         "images/13.gif",
-        "images/14.jpg",
+        "images/15.png",
         "images/jian.png"
     ];
     var proBox = $("#loading");
@@ -50,10 +50,10 @@
 
     function page1(){
         setTimeout(function () {
+            bgm.play();
             WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
                 bgm.play();
             });
-            bgm.play();
         }, 200);
         $(".page1").removeClass("hide");
         timeStart();
