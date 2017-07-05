@@ -21,7 +21,7 @@
         "images/10.gif",
         "images/11.gif",
         "images/13.gif",
-        "images/15.png",
+        "images/15.jpg",
         "images/jian.png"
     ];
     var proBox = $("#loading");
