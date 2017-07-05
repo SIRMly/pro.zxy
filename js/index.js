@@ -3,6 +3,10 @@
 * @Date:   2017-07-05 10:51:00
 */
 ;(function ($){
+    setTimeout(function (){
+        var audio = document.getElementById("audio");
+        audio.play();
+    },0);
     var imgs = [
         "images/01.jpg",
         "images/1.gif",
@@ -48,59 +52,54 @@
     function page1(){
         $(".page1").removeClass("hide");
         timeStart();
-    }
-    var wordTime,hiddenTime,arrowTime;
-    var arrow = $(".hand");
-    var swiper = new Swiper('.swiper-container',{
-        simulateTouch: false,
-        slidesPerView: 1,
-        paginationClickable: false,
-        spaceBetween: 0,
-        loop: false,
-        autoplay: false,
-        autoplayDisableOnInteraction: false,
-        onTransitionStart : function (swiper){
-            $(".hidden").removeClass("hide");
-            $(".words").removeClass("moveToLeft");
-            console.log(swiper.activeIndex);
-            $(".text").hide();
-            arrow.addClass("hide");
-            /*==清除定时器==*/
-            clearTimeout(wordTime);
-            clearTimeout(hiddenTime);
-            clearTimeout(arrowTime);
-        },
-        onTransitionEnd : function (swiper){
-            //console.log(swiper);
-            var slideNow = $(".swiper-slide-active");
-            var text1 = slideNow.find(".text1");
-            var text2 = slideNow.find(".text2");
-            var text3 = slideNow.find(".text3");
-            /*==向右移动==*/
-            var words = slideNow.find(".words");
-            words.addClass("moveToLeft");
-            text1.show();
-            if(text2.length>0){
-                wordTime = setTimeout(function (){
-                    text1.stop().fadeOut(800);
-                    text2.stop().delay(400).fadeIn(800, function (){
-                        if(text3.length>0){
-                            setTimeout(function (){
-                                text2.stop().fadeOut(800);
-                                text3.stop().delay(400).fadeIn(800);
-                            },1500);
-                        }
-                    });
-                }, 2000)
+        var wordTime,hiddenTime,arrowTime;
+        var arrow = $(".hand");
+        var swiper = new Swiper('.swiper-container',{
+            onInit: function(swiper){
+            },
+            onTransitionStart : function (swiper){
+                $(".hidden").removeClass("hide");
+                $(".words").removeClass("moveToLeft");
+                console.log(swiper.activeIndex);
+                $(".text").hide();
+                arrow.addClass("hide");
+                /*==清除定时器==*/
+                clearTimeout(wordTime);
+                clearTimeout(hiddenTime);
+                clearTimeout(arrowTime);
+            },
+            onTransitionEnd : function (swiper){
+                //console.log(swiper);
+                var slideNow = $(".swiper-slide-active");
+                var text1 = slideNow.find(".text1");
+                var text2 = slideNow.find(".text2");
+                var text3 = slideNow.find(".text3");
+                /*==向右移动==*/
+                var words = slideNow.find(".words");
+                words.addClass("moveToLeft");
+                text1.show();
+                if(text2.length>0){
+                    wordTime = setTimeout(function (){
+                        text1.stop().fadeOut(800);
+                        text2.stop().delay(400).fadeIn(800, function (){
+                            if(text3.length>0){
+                                setTimeout(function (){
+                                    text2.stop().fadeOut(800);
+                                    text3.stop().delay(400).fadeIn(800);
+                                },1500);
+                            }
+                        });
+                    }, 2000)
+                }
+                hiddenTime = setTimeout(function (){
+                    $(".hidden").addClass("hide");
+                },1300);
+                arrowTime = setTimeout(function (){
+                    arrow.removeClass("hide");
+                },5000);
             }
-            hiddenTime = setTimeout(function (){
-                $(".hidden").addClass("hide");
-            },1300);
-            arrowTime = setTimeout(function (){
-                arrow.removeClass("hide");
-            },5000);
-        }
-    });
+        });
+    }
 
 function timeStart(){
     var start = new Date();
