@@ -8,10 +8,8 @@
     document.addEventListener("WeixinJSBridgeReady", function () {
     }, false);
     setTimeout(function () {
-        bgm.load();
         bgm.play();
         WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-            bgm.load();
             bgm.play();
         })
     }, 200);
@@ -43,7 +41,6 @@
             newImg.src = imgs[i];
             newImg.onload = function (){
                 proNum++;
-                console.log(Math.floor(proNum/count*100));
                 proPercentage = Math.floor(proNum/count*100);
                 proBox.find("#progress").html(proPercentage+"%");
                 if(proNum>=count){
@@ -68,7 +65,6 @@
             onTransitionStart : function (swiper){
                 $(".hidden").removeClass("hide");
                 $(".words").removeClass("moveToLeft");
-                console.log(swiper.activeIndex);
                 $(".text").hide();
                 arrow.addClass("hide");
                 /*==清除定时器==*/
@@ -77,7 +73,6 @@
                 clearTimeout(arrowTime);
             },
             onTransitionEnd : function (swiper){
-                //console.log(swiper);
                 var slideNow = $(".swiper-slide-active");
                 var text1 = slideNow.find(".text1");
                 var text2 = slideNow.find(".text2");
