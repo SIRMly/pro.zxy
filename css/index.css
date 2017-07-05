@@ -1,115 +1,128 @@
 /* 
-* @Author: Marte
-* @Date:   2017-06-26 23:34:15
-* @Last Modified by:   Marte
-* @Last Modified time: 2017-07-03 22:31:27
+* @Author: SIRMly
+* @Date:   2017-07-05
 */
-@media screen and (orientation:landscape) {
-    /*   css[横向定义样式]  */
-    *{
-        padding:0;
-        margin:0;
-    }
-    body{
-        background:#231916;
-        width: 100%; height: 100%;
-        overflow: hidden;
-    }
-    .header{
-        height:0.8rem;
-        line-height:0.8rem;
-        font-size:0.3rem;
-        color:#fff;
-    }
-    @keyframes flashing{
-        0%{ 
-            opacity:1;
-        }
-        100%{
-            opacity:0;
-        }
-    }
-    
-    .circle{
-        display:inline-block;
-        width:0.3rem;
-        height:0.3rem;
-        border-radius:50%;
-        background:red;
-        margin-left:0.3rem;
-        animation:flashing 1s infinite;
-    }
-    .right{
-        float:right;
-        margin-right:0.3rem;
-    }
-    .logo{
-        font-weight:bold;
-    }
-    .text{
-        font-size:0.5rem;
-        font-weight:normal;
-        margin-top:0.05rem;
-        color:#c9bc9c;
-        text-align:center;
-    }
-    .text .num{
-        color:#f8b62d;
-    }
-    .text .symbol{
-        color:#e60012;
-        font-weight:bold;
-    }
-    .text .bold{
-        font-weight:bold;
-    }
-    .swiper-container{
-        /*width:9rem;*/
-        /*height:6rem;*/
-        
-    }
-    .swiper-slide{
-       
-        margin:0 auto;
-        /*overflow:hidden;*/
-    }
-    .swiper-slide img{
-        display:block;
-        width:7.125rem;
-        height:100%;
-        border-radius:0.3rem;
-        /*border:1px solid red;*/
-        /*width:100%;*/
-        margin:0 auto;
-        height:3.8rem;
-    }
-    .swiper-pagination{
-        right:18px;
-    }
-    .swiper-pagination-bullet{
-        width:0.24rem;
-        height:0.24rem;
-        border-radius:100%;
-    }
-    .swiper-pagination-bullet{
-        background:#f39700;
+@charset "utf-8";
+/*==reset==*/
+/*早期浏览器连续点击有蓝底*/
+body{-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+a, body {color: #1c1c1c;}
+a, blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {margin: 0;  padding: 0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box ; }
+body {background: #fff;font-family: "Microsoft Yahei"; }
+h1, h2, h3, h4, h5, h6 {font-weight: 400;font-size: 100% ; }
+address, caption, cite, code, dfn, em, strong, th, var {font-style: normal;font-weight: 400; }
+a { text-decoration: none; }
+img {border: none ; }
+li, ol, ul { list-style: none; }
+input, textarea {border: none;  border: 0;  outline: 0;  background-color: transparent;  -webkit-appearance: none; }
+textarea{overflow: auto;}
+button, input, select, textarea {  font: 14px Verdana, Helvetica, Arial, sans-serif ;}
+table {  border-collapse: collapse; }
+html {overflow-y: scroll;}
+a, button, input, select, textarea { -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { -webkit-appearance: none !important;  margin: 0  ;}
+button, input[type=submit], input[type=reset], input[type=button] { -webkit-appearance: none;}
+input[type=number] { -moz-appearance: textfield;  }
+.clearfix:after, .clearfix:before {  content: "";  display: block;  height: 0;  clear: both;  visibility: hidden;}
+.pull-left { float: left;}
+.pull-right { float: right;}
+.hide{display: none; }
+
+/*==thisPage==*/
+html,body{font-size: 10vh;}
+body{background:#231916;}
+.page{position: absolute; width: 100%; height: 100%; left: 0; top: 0; overflow: hidden;}
+.loading-img{width: 50vh; height: 50vh; position: absolute; left: 50%; margin-left: -25vh; top: 25vh; background: url("../images/progress.png") no-repeat center center;
+    -webkit-background-size: 100% 100%;background-size: 100% 100%;  border-radius: 50%;
+    -webkit-animation: rotated 8s linear infinite;
+    -o-animation: rotated 8s linear infinite;
+    animation: rotated 8s linear infinite;}
+@keyframes rotated{
+    0%{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);  }
+    100%{-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);  }
+}
+@-webkit-keyframes rotated {
+    0%{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);  }
+    100%{-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);  }
+}
+.progerss-inner{width: 50vh; position: absolute; left: 50%; margin-left: -25vh; top: 80vh;}
+#progress-bar{width: 50vh; height: 2vh;}
+#progress-bar span{display: block; height: 100%; background-color: #f39700; width: 100%}
+#progress{font-size: 0.4rem;color: #fff; height: 1rem; line-height: 1rem; text-align: center; width: 100%;}
+.header{
+    height: 11vh;
+    line-height:11vh;
+    font-size:0.52rem;
+    color:#fff;
+    padding-left: 1vw;
+}
+.time{font-size: 0.4rem;}
+
+@keyframes flashing{
+    0%{
         opacity:1;
     }
-    .swiper-pagination-bullet-active{
-        background:#fff;
+    100%{
+        opacity:0;
     }
-    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
-        left:4.2rem;
-        bottom:0;
-    }
-
 }
-/*==by SIRMly==*/
-.words{position: relative; height: 0.75rem; overflow: hidden;}
-.hidden{position: absolute; width: 1.35rem; right: 0; top: 3.8rem; bottom: 0; background-color: #231916; z-index: 99;}
-.hand{width: 0.7rem; height: 1.03rem; position: absolute; z-index: 999; right: 4%; top: 50%; margin-top: -1rem;
-    background: url("../images/jian.png") no-repeat center center;
+@-webkit-keyframes flashing {
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+.circle{ display:inline-block; width:0.46rem; height:0.46rem; border-radius:50%; background:red; margin-left:0.3rem; -webkit-animation: flashing 1s infinite; -o-animation: flashing 1s infinite; animation: flashing 1s infinite;
+}
+.right{ float:right; margin-right:0.3rem; }
+.logo{font-weight:bold; }
+/*==swiper==*/
+.swiper-slide{height: 89vh;}
+.swiper-slide img{ display: block; margin: 0 auto; font-size: 0; border-radius:0.3rem; height: 74vh; max-height: 48vw;}
+.words{position: relative; width: 100%; height: 15vh; overflow: hidden; margin-left: 100%;
+    -webkit-transition: margin-left 1.3s linear;
+    -moz-transition: margin-left 1.3s linear;
+    -ms-transition: margin-left 1.3s linear;
+    -o-transition: margin-left 1.3s linear;
+    transition: margin-left 1.3s linear;}
+.moveToLeft{margin-left: 0;}
+.text{font-size:0.79rem; height: 15vh; line-height: 14vh; font-weight:normal; color:#c9bc9c; text-align:center; position: absolute; width: 100%; left: 0; top: 0;}
+.text1{z-index: 30;}
+.text2{z-index: 20;}
+.text3{z-index: 10;}
+.text .num{color:#f8b62d; }
+.text .symbol{ color:#e60012; font-weight:bold;}
+.text .bold{font-weight:bold;}
+.hidden{position: absolute; width: calc(50vw - 70vh);  right: 0; top: 74vh; bottom: 0; background-color: #231916; z-index: 99;}
+.hand{width: 0.9rem; height: 0.9rem; position: absolute; z-index: 999; right: 3%; top: 50%; margin-top: -14vh; background: url("../images/jian.png") no-repeat center center;
     -webkit-background-size: contain;
-    background-size: contain;
+    background-size: contain;}
+
+
+
+
+
+
+/*==横屏提示==*/
+@-webkit-keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
 }
-.time{font-size: 0.25rem;}
+@keyframes rotation {
+    10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    50%, 60% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    90% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    100% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+}
+#orientLayer { display: none }
+@media screen and (max-aspect-ratio: 9/12) {
+    #orientLayer { display: block }
+}
+.mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 }
+.mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center }
+.mod-orient-layer__icon-orient { background-image: url('../images/crossWarning.png'); display: inline-block; width: 67px; height: 109px; transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px }
+.mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff }
