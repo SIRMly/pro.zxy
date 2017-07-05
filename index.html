@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>有一种真爱，叫和你一起看张学友</title>
     <meta charset="utf-8">
     <meta http-equiv="Cache-Control" content="no-cache"/>
     <meta name="renderer" content="webkit"/>
@@ -182,10 +183,34 @@
         <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
     </div>
 </div>
-
-
 </body>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var wechatOptions = {
+        title   : '有一种真爱，叫和你一起看张学友',
+        desc    : '',
+        link    : '',
+        imgUrl  : '',
+    };
+    wx.ready(function(){
+        wx.onMenuShareTimeline({
+            title   : wechatOptions.desc,
+            link    : wechatOptions.link,
+            imgUrl  : wechatOptions.imgUrl,
+        });
+
+        wx.onMenuShareAppMessage({
+            title   : wechatOptions.title,
+            desc    : wechatOptions.desc,
+            link    : wechatOptions.link,
+            imgUrl  : wechatOptions.imgUrl,
+        });
+    });
+</script>
+
+
+
 </html>
