@@ -49,12 +49,7 @@ body{background:#231916;}
 #progress-bar{width: 50vh; height: 2vh;}
 #progress-bar span{display: block; height: 100%; background-color: #f39700; width: 0%}
 #progress{font-size: 0.4rem;color: #fff; height: 1rem; line-height: 1rem; text-align: center; width: 100%;}
-.header{
-    height: 11vh;
-    line-height:11vh;
-    font-size:0.52rem;
-    color:#fff;
-    padding-left: 1vw;
+.header{ width: 100%; overflow: hidden; height: 11vh; line-height:11vh; font-size:0.52rem; color:#fff; padding-left: 1vw;
 }
 .time{font-size: 0.4rem;}
 
@@ -79,6 +74,7 @@ body{background:#231916;}
 .right{ float:right; margin-right:0.3rem; }
 .logo{font-weight:bold; }
 /*==swiper==*/
+.swiper-slide{overflow: hidden; width: 100vw;}
 .swiper-slide img{ display: block; margin: 0 auto; font-size: 0; border-radius:0.3rem; height: 74vh; max-height: 48vw;}
 .words{position: relative; width: 100%; height: 15vh; overflow: hidden; margin-left: 100%;
     -webkit-transition: margin-left 1.3s linear;
@@ -98,12 +94,7 @@ body{background:#231916;}
 .hand{width: 0.9rem; height: 0.9rem; position: absolute; z-index: 999; right: 3%; top: 50%; margin-top: -14vh; background: url("../images/jian.png") no-repeat center center;
     -webkit-background-size: contain;
     background-size: contain;}
-
-
-
-
-
-
+.Graphic{display: block; width: 100%; height: 100%;}
 /*==横屏提示==*/
 @-webkit-keyframes rotation {
     10% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
